@@ -2,16 +2,15 @@
     "name": "Pause4Thought",
     "version": "1.0",
     "description": "Delay websites from loading",
-    "permissions": ["activeTab"],
+    "permissions": ["activeTab","tabs"],
     "background": {
-      "scripts" ["background.js"]
+      "scripts": ["background.js"]
     },
     "content_scripts": [
       {
-        "matches": ["https://*.youtube.com/*"],
-        "js": ["delayScript.js"],
-        "run_at": "document_start"
+        "matches": ["https://*.youtube.com/*", "https://*.reddit.com/*", "https://*.wikipedia.org/*"],
+        "js": ["delayScript.js"]
       }
     ],
-    "manifest_version": 1
+    "manifest_version": 2
   }
