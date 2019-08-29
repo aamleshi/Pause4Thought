@@ -1,0 +1,17 @@
+{
+    "name": "Pause4Thought",
+    "version": "1.0",
+    "description": "Delay websites from loading",
+    "permissions": ["activeTab"],
+    "background": {
+      "scripts" ["background.js"]
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://*.youtube.com/*"],
+        "js": ["delayScript.js"],
+        "run_at": "document_start"
+      }
+    ],
+    "manifest_version": 1
+  }
