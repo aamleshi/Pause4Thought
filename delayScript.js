@@ -1,14 +1,14 @@
-var delay = 15;
+//var delay = 15;
 console.log("start of content script")
 
-function runDelay(){
+function runDelay(delay){
     console.log("in the delay");
     browser.runtime.sendMessage({"hidePage": true});
-    setTimeout(showPage, 10000);
+    setTimeout(showPage, 10*delay);
 }
 function showPage() {
     console.log("ending the delay")
     browser.runtime.sendMessage({"hidePage": false});
 }
-runDelay();
+runDelay(delay);
 console.log("end of content script")
